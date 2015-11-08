@@ -19,9 +19,6 @@ head(elecfeb)
 ques <- elecfeb$Global_active_power=="?"
 elecfeb$Global_active_power[ques] <- NA
 elecfebKW <- as.numeric(elecfeb$Global_active_power) / 1000
-png(file = "plot1.png")
-hist(elecfebKW, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red", breaks = 15)
-dev.off()
 png(file = "plot2.png")
 plot(p,elecfebKW,type = "l",xlab = "", ylab = "Global Active Power (kilowatts)")
 dev.off()
